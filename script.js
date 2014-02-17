@@ -1,4 +1,4 @@
-var width = 420,
+var width = 540,
     barHeight = 20;
 
 var scale = d3.scale.linear().
@@ -30,7 +30,7 @@ function createChart(error, data){
     attr("x", function(d) { return scale(d.value) - 3; }).
     attr("y", barHeight / 2).
     attr("dy", ".35em").
-    text(function(d) { return d.value; });
+    text(function(d) { return d.value + " (" + d.name + ")"; });
 }
 
 function type(d){
