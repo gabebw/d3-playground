@@ -45,6 +45,7 @@ svg.selectAll(".month")
     .attr("d", monthPath);
 
 d3.csv('dji.csv', function(error, csv) {
+  // Map of date -> change in price that day
   var data = d3.nest()
     .key(function(d) { return d.Date; })
     .rollup(function(d) { return (d[0].Close - d[0].Open) / d[0].Open; })
